@@ -20,6 +20,8 @@ export class AppComponent {
         }
         else {
           console.log("Successfully Logged in.");
+          this.afService.displayName = auth.google.displayName;
+          this.afService.email = auth.google.email;
           this.isLoggedIn = true;
           this.router.navigate(['']);
         }

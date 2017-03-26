@@ -10,7 +10,6 @@ import { AppComponent } from './app.component';
 import { PopularComponent } from './popular/popular.component';
 import { NewComponent } from './new/new.component';
 import { CreateComponent } from './create/create.component';
-import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 import { HomeComponent } from './home/home.component';
@@ -27,7 +26,6 @@ export const firebaseConfig = {
 const appRoutes: Routes = [
   { path: 'create', component: CreateComponent },
   { path: 'signin', component: SigninComponent },
-  { path: 'signup', component: SignupComponent },
   { path: 'home', component: HomeComponent },
   { path: 'team', component: TeamComponent },
   { path: '',
@@ -43,7 +41,6 @@ const appRoutes: Routes = [
     PopularComponent,
     NewComponent,
     CreateComponent,
-    SignupComponent,
     SigninComponent,
     PageNotFoundComponent,
     HomeComponent,

@@ -1,10 +1,15 @@
-// src/app/providers/af.ts
 import {Injectable} from "@angular/core";
-import {AngularFire, AuthProviders, AuthMethods} from 'angularfire2';
+import {AngularFire, AuthProviders, AuthMethods, FirebaseListObservable} from 'angularfire2';
 
 @Injectable()
 export class AF {
-  constructor(public af: AngularFire) {}
+  public builds: FirebaseListObservable<any>;
+  public users: FirebaseListObservable<any>;
+  public displayName: string;
+  public email: string;
+  constructor(public af: AngularFire) {
+    this.builds = this.af.database.list('builds');
+  }
   /**
    * Logs in the user
    * @returns {firebase.Promise<FirebaseAuthState>}
@@ -20,5 +25,15 @@ export class AF {
    */
   logout() {
     return this.af.auth.logout();
+  }
+  
+  sendBuild(text) {
+    var build = {
+      build: text,
+      displayName: this.displayName,
+      email: this.email,
+      timestamp: Date.now()
+    };
+    this.builds.push(build);
   }
 }
