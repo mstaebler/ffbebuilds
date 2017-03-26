@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
+import { AF } from './providers/af';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,25 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'FFBE Builds';
-  create = 'Create Build';
+  public isLoggedIn: boolean;
+
+  constructor(public afService: AF, private router: Router) {
+    this.afService.af.auth.subscribe(
+      (auth) => {
+        if(auth == null) {
+          console.log("Not Logged in.");
+          this.router.navigate(['signin']);
+          this.isLoggedIn = false;
+        }
+        else {
+          console.log("Successfully Logged in.");
+          this.isLoggedIn = true;
+          this.router.navigate(['']);
+        }
+      }
+    );
+  }
+  logout() {
+    this.afService.logout();
+  }
 }
