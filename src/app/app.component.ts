@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-
-import { NewComponent } from './new/new.component';
-import { PopularComponent } from './popular/popular.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-root',

@@ -1,14 +1,9 @@
 <nav>
   <ul>
-    <li><a class="active" href="#">FFBE Builds</a></li>
-    <li><a href="#">Create Build</a></li>
-    <li class="align-right"><a href="#">Sign in</a></li>
-    <li class="align-right"><a href="#">Sign up</a></li>
+    <li><a routerLink="/home" routerLinkActive="active">FFBE Builds</a></li>
+    <li><a routerLink="/create">Create Build</a></li>
+    <li class="align-right"><a routerLink="/signin">Sign in</a></li>
+    <li class="align-right"><a routerLink="/signup">Sign up</a></li>
   </ul>
 </nav>
-<div class="left-col">
-  <app-new></app-new>
-</div>
-<div class="right-col">
-  <app-popular></app-popular>
-</div>
+<router-outlet></router-outlet>
