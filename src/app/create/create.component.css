@@ -1,0 +1,11 @@
+textarea {
+    width: 70%;
+    height: 300px;
+}
+
+div {
+    width:70%;
+    margin:0 auto;
+    margin-top: 15%;
+    text-align: center;
+}

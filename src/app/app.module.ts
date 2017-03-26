@@ -12,12 +12,14 @@ import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 import { HomeComponent } from './home/home.component';
+import { TeamComponent } from './team/team.component';
 
 const appRoutes: Routes = [
   { path: 'create', component: CreateComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'team', component: TeamComponent },
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full'
@@ -34,7 +36,8 @@ const appRoutes: Routes = [
     SignupComponent,
     SigninComponent,
     PageNotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,
