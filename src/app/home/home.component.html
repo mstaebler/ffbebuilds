@@ -1,9 +1,11 @@
-<div class="left-col">
+<!--<div class="left-col">
   <app-new></app-new>
 </div>
 <div class="right-col">
   <app-popular></app-popular>
-</div>
+</div>-->
 <div *ngFor="let build of builds | async">
-  {{ build.displayName }}
+  <ul >
+    <li *ngFor="let item of build.build">{{ item }}</li>
+  </ul>
 </div>

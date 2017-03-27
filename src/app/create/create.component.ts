@@ -9,6 +9,7 @@ import {FirebaseListObservable} from "angularfire2";
 })
 export class CreateComponent implements OnInit {
   public newBuild: string;
+  public tags: string;
   public builds: FirebaseListObservable<any>;
   constructor(public afService: AF) {
     this.builds = this.afService.builds;
@@ -17,7 +18,8 @@ export class CreateComponent implements OnInit {
   ngOnInit() {}
 
   sendBuild(){
-    this.afService.sendBuild(this.newBuild);
+    this.afService.sendBuild(this.newBuild, this.tags);
     this.newBuild = '';
+    this.tags = '';
   }
 }

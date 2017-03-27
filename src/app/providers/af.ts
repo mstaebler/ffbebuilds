@@ -1,5 +1,5 @@
-import {Injectable} from "@angular/core";
-import {AngularFire, AuthProviders, AuthMethods, FirebaseListObservable} from 'angularfire2';
+import { Injectable } from "@angular/core";
+import { AngularFire, AuthProviders, AuthMethods, FirebaseListObservable } from 'angularfire2';
 
 @Injectable()
 export class AF {
@@ -20,20 +20,26 @@ export class AF {
       method: AuthMethods.Popup,
     });
   }
-  /**
-   * Logs out the current user
-   */
+
   logout() {
     return this.af.auth.logout();
   }
   
-  sendBuild(text) {
-    var build = {
-      build: text,
+  getBuilds() {
+      return this.builds;
+  }
+
+  sendBuild(build, tags) {
+    var splitBuild = build.split('\n');
+    splitBuild.splice(1, 1);
+    console.log(splitBuild);
+    var newBuild = {
+      build: splitBuild,
+      tags,
       displayName: this.displayName,
       email: this.email,
       timestamp: Date.now()
     };
-    this.builds.push(build);
+    this.builds.push(newBuild);
   }
 }

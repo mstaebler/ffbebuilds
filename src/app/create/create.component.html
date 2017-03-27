@@ -3,7 +3,7 @@
     <form>
       <textarea ref-textarea [(ngModel)]="newBuild" name="build"></textarea><br>
       Create tags for this build seperated by commas
-      <input type="text" name="tags" placeholder="bis, whale, ifrit raid"><br>
+      <input type="text" [(ngModel)]="tags" name="tags" placeholder="bis, whale, ifrit raid"><br>
       <input type="submit" value="submit" (click)="sendBuild()">
     </form>
 </div>
