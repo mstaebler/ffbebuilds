@@ -14,6 +14,7 @@ import { SigninComponent } from './signin/signin.component';
 import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 import { HomeComponent } from './home/home.component';
 import { TeamComponent } from './team/team.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyDCrV4LGfle5BkNr6NtwYkwTZvT6s-DmRw",
@@ -44,7 +45,8 @@ const appRoutes: Routes = [
     SigninComponent,
     PageNotFoundComponent,
     HomeComponent,
-    TeamComponent
+    TeamComponent,
+    DropdownComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,8 @@
 <div>
-    <h3>Paste a build from <a href="http://www.ffbedb.com/" target="_blank">FFBEDB.com</a> here to upload your build.</h3>
     <form>
-      <textarea ref-textarea [(ngModel)]="newBuild" name="build"></textarea><br>
+      <br>
       Create tags for this build seperated by commas
+      <app-dropdown></app-dropdown>
       <input type="text" [(ngModel)]="tags" name="tags" placeholder="bis, whale, ifrit raid"><br>
       <input type="submit" value="submit" (click)="sendBuild()">
     </form>

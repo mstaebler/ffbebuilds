@@ -1,0 +1,4 @@
+<select (change)="onSelect($event.target.value)">
+  <option *ngFor="let unit of units" [value]="unit.id">{{unit.name}}</option>
+</select>
+<div>selection={{selectedUnit.name}}</div>
